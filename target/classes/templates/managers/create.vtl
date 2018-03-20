@@ -1,0 +1,34 @@
+<p class="pageHeader">New Manager</p>
+
+<form action="/managers" method="post">
+    <label for="firstName">First Name:</label>
+    <input id="firstName" class="inputbox" type="text" name="firstName" required/>
+
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" class="inputbox" type="text" name="lastName" required/>
+
+    <label for="department">Department:</label>
+    <select id="department" name="department">
+        #foreach($department in $departments)
+            <option value="$department.getId()">$department.getTitle()
+            </option>
+        #end
+    </select>
+
+    <label for="salary">Salary:</label>
+    <input id="salary" class="inputbox" type="text" name="salary" required/>
+
+    <label for="budget">Budget:</label>
+    <input id="budget" class="inputbox" type="text" name="budget" required/>
+
+    <input type="submit" value="Save" class="button"/>
+
+
+
+    <div>
+        <a href="/managers" class="button center">Back</a>
+    </div>
+
+
+
+</form>
