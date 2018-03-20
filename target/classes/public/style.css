@@ -1,3 +1,21 @@
 body{
-background-color: green;
+background-color: white;
 }
+
+table{margin:10px 10px 10px 15px;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+table, th,td{
+border:1px solid black;}
+
+th{height: 50px;}
+
+td{padding: 15px;}
+
+.pageHeader{
+background:green;
+color:white;
+height: 100px;
+text-align: center;}

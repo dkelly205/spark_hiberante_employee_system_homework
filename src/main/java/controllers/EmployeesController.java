@@ -19,6 +19,7 @@ public class EmployeesController {
         staticFileLocation("public");
         ManagersController managersController = new ManagersController();
         EngineersController engineersController = new EngineersController();
+        DepartmentsController departmentsController = new DepartmentsController();
         Seeds.seedData();
 
         get("/employees", (req, res)->{

@@ -60,5 +60,14 @@ public class EngineersController {
             return null;
 
         }, new VelocityTemplateEngine());
+
+        get("/engineers/:id/edit", (req, res)->{
+            Map<String,Object> model = new HashMap<>();
+            Engineer engineer = DBHelper.find(,Engineer.class);
+
+
+
+
+        })
     }
 }
