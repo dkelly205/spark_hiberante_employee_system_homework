@@ -85,5 +85,14 @@ public class DepartmentsController {
             return null;
 
         }, new VelocityTemplateEngine());
+
+        post("departments/:id/delete", (req, res)->{
+            String strId = req.params("id");
+            int intId = Integer.parseInt(strId);
+            Department department = DBHelper.find(intId, Department.class);
+            DBHelper.delete(department);
+            res.redirect("/departments");
+            return null;
+        }, new VelocityTemplateEngine());
     }
 }
