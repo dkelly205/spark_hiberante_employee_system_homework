@@ -1,0 +1,10 @@
+<div>
+    <p> Name: $manager.getFirstName() $manager.getLastName()</p>
+    <p> Department: $manager.getDepartment().getTitle()</p>
+    <p> Budget: £ $manager.getBudget()</p>
+</div>
+
+<a href="/managers/$manager.getId()/edit" class="button center">Edit</a>
+<form action="/managers/$manager.getId()/delete" method="post">
+    <input type="submit" value="delete" class="button">
+</form>
