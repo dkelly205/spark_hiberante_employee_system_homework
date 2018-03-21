@@ -1,6 +1,6 @@
 <p class="pageHeader">Update Engineer</p>
 
-<form action="/engineers/:id/edit" method="post">
+<form action="/engineers/$engineer.getId()" method="post">
 
     <label for="firstName">First Name:</label>
     <input id="firstName" class="inputbox" type="text" name="firstName" value="$engineer.getFirstName()" required/>
