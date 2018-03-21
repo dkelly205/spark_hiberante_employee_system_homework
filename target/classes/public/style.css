@@ -7,15 +7,46 @@ table{margin:10px 10px 10px 15px;
   width: 50%;
 }
 
+
+
+
 table, th,td{
 border:1px solid black;}
 
-th{height: 50px;}
+th{height: 50px;
+ background-color: #dddddd;}
 
 td{padding: 15px;}
 
 .pageHeader{
+margin:0px;
 background:green;
+padding:25px;
 color:white;
-height: 100px;
+height: 40px;
 text-align: center;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #dddddd;
+    overflow: hidden;
+}
+
+li {
+    float:left;
+}
+
+
+
+li a{
+display:block;
+padding: 16px;
+text-align: center;
+text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(169,169,169);
+}

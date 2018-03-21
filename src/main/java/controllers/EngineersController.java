@@ -61,13 +61,12 @@ public class EngineersController {
 
         }, new VelocityTemplateEngine());
 
-        get("/engineers/:id/edit", (req, res)->{
-            Map<String,Object> model = new HashMap<>();
-            Engineer engineer = DBHelper.find(,Engineer.class);
-
-
-
-
-        })
+//        get("/engineers/:id/edit", (req, res)->{
+//            Map<String,Object> model = new HashMap<>();
+//            Engineer engineer = DBHelper.find(.getId(),Engineer.class);
+//            model.put("template", "templates/engineers/edit.vtl");
+//            return new ModelAndView(model, "templates/layout.vtl");
+//
+//        }, new VelocityTemplateEngine());
     }
 }
