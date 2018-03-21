@@ -2,6 +2,7 @@ package controllers;
 
 import db.DBHelper;
 import models.Department;
+import models.Engineer;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -46,6 +47,43 @@ public class DepartmentsController {
             DBHelper.save(department);
             res.redirect("/departments");
             return null;
+        }, new VelocityTemplateEngine());
+
+        get("/departments/:id/edit", (req, res)->{
+            String strId = req.params("id");
+            Integer intId = Integer.parseInt(strId);
+            Department department = DBHelper.find(intId,Department.class);
+            List<Department> departments = DBHelper.getAll(Department.class);
+            Map<String,Object> model = new HashMap<>();
+            model.put("department", department);
+            model.put("departments", departments);
+            model.put("template", "templates/departments/edit.vtl");
+            return new ModelAndView(model, "templates/layout.vtl");
+
+        }, new VelocityTemplateEngine());
+
+
+        get("/departments/:id", (req, res)->{
+            String strId = req.params("id");
+            Integer intId = Integer.parseInt(strId);
+            Department department = DBHelper.find(intId, Department.class);
+            Map<String, Object> model = new HashMap<>();
+            model.put("department", department);
+            model.put("template", "templates/departments/show.vtl");
+            return new ModelAndView(model, "templates/layout.vtl");
+
+        }, new VelocityTemplateEngine());
+
+        post("departments/:id", (req,res)->{
+            String strId = req.params("id");
+            Integer intId = Integer.parseInt(strId);
+            Department department = DBHelper.find(intId, Department.class);
+            String title = req.queryParams("title");
+            department.setTitle(title);
+            DBHelper.save(department);
+            res.redirect("/departments");
+            return null;
+
         }, new VelocityTemplateEngine());
     }
 }

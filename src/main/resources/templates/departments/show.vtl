@@ -1,0 +1,11 @@
+<p class="pageHeader">Department</p>
+
+<div>
+    <p> Department: $department.getTitle()</p>
+</div>
+
+<a href="/departments/$department.getId()/edit" class="button center">Edit</a>
+
+<form action="/departments/$department.getId()/delete" method="post">
+    <input type="submit" value="delete" class="button">
+</form>

@@ -12,6 +12,7 @@
     #foreach($department in $departments)
     <tr>
         <td>$department.getTitle()</td>
+        <td><a href="/departments/$department.getId()">View More</a></td>
     </tr>
     #end
 
